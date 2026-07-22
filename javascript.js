@@ -1,4 +1,4 @@
-// get the computers choice between 3 numbers
+
 
 //convert number choices into string
 function convertChoice(num) {
@@ -31,17 +31,48 @@ let computerScore = 0;
 
 //make the function for starting the round and giving score to whoever wins
 function playRound(humanChoice, ComputerChoice) {
-    if ((humanChoice === "Scissors" && ComputerChoice === "Rock") ||
-     (humanChoice === "Rock" && ComputerChoice === "Paper") ||
-     (humanChoice === "Paper" && ComputerChoice === "Scissors")){
-        console.log("Computer wins! :/ I expected more of you");
-        return ++computerScore;
-    }else if ((humanChoice === "Rock" && ComputerChoice === "Scissors") ||
-     (humanChoice === "Paper" && ComputerChoice === "Rock") ||
-     (humanChoice === "Scissors" && ComputerChoice === "Paper")){
-        console.log("Human wins this round");
-        return ++humanScore;
-    }else
-        console.log("its a draw!!");
+    //lose messages
+    if (humanChoice === "Scissors"){
+        if (ComputerChoice === "Rock"){
+            console.log("You lose! Rock beats Scissors")
+            return ++computerScore;
+        }if (ComputerChoice === "Paper"){
+            console.log("You Win! Scissors beats Paper")
+            return ++humanChoice;
+        }
+    }else if (humanChoice === "Rock"){
+        if (ComputerChoice === "Paper"){
+            console.log("You lose! Paper beats Rock")
+            return ++computerScore;
+        }if (ComputerChoice === "Scissors"){
+            console.log("You Win! Rock beats Scissors")
+            return ++humanChoice;
+        }
+    }else if (humanChoice === "Paper"){
+        if (ComputerChoice === "Scissors"){
+            console.log("You lose! Scissors beats Paper")
+            return ++computerScore;
+        }if (ComputerChoice === "Rock"){
+            console.log("You Win! Paper beats Rock")
+            return ++humanChoice;
+        }
+    }else 
+        console.log("its a tie!")
 }
 
+//make a new function called playRound
+function playRound(humanChoice, computerChoice) {
+    //make new variable that houses the choices made
+    let manChoice = humanChoice();
+    let robotChoice= computerChoice();
+//make a for loop that goes through 5 rounds
+    for (let i = 1; i < 6; i++){
+    //each loop recalls the choice functions for different choices each round.
+    alert(humanChoice());
+    alert(computerChoice());
+    }
+    //if statement that checks if either score is higher than the other
+    let victoryMessage = (humanScore > computerScore) ? "Humanity wins suck it clankers":
+    (computerScore > humanScore) ? "FUCK FUCK FUCK FUCK the clankers win you useless fucking human":
+    "its a tie?? how the hell";
+}
