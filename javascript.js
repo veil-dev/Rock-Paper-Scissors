@@ -6,7 +6,7 @@ function convertChoice(num) {
         return "Rock";
     }else if (num === 2) {
         return "Scissors";
-    }else
+    }else (num === 3)
         return "Paper";
 }
 
@@ -23,10 +23,12 @@ function getComputerChoice() {
 function getHumanChoice() {
     let humanChoice = parseInt(prompt("Rock = 1 \n Scissors = 2 \n Paper = 3 \n What is your choice?:"));
     
-    while(humanChoice == NaN || humanChoice > 3 || humanChoice < 1)  {
+    
+    while(humanChoice !== humanChoice || humanChoice > 3 || humanChoice < 1)  {
         alert("not in the range sorry")
         humanChoice = parseInt(prompt("Rock = 1 \n Scissors = 2 \n Paper = 3 \n What is your choice?:"));
     }
+    return convertChoice(humanChoice);
 }
 
 //Human score and computer score make new variable
