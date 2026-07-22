@@ -42,28 +42,31 @@ function playRound(humanChoice, ComputerChoice) {
         if (ComputerChoice === "Rock"){
             alert("You lose! Rock beats Scissors")
             ++computerScore;
-        }if (ComputerChoice === "Paper"){
+        }else if (ComputerChoice === "Paper"){
             alert("You Win! Scissors beats Paper")
             ++humanScore;
-        }
+        }else 
+            alert("its a tie!");
     }else if (humanChoice === "Rock"){
         if (ComputerChoice === "Paper"){
             alert("You lose! Paper beats Rock")
             ++computerScore;
-        }if (ComputerChoice === "Scissors"){
+        }else if (ComputerChoice === "Scissors"){
             alert("You Win! Rock beats Scissors")
             ++humanScore;
-        }
+        }else 
+            alert("its a tie!");
     }else if (humanChoice === "Paper"){
         if (ComputerChoice === "Scissors"){
             alert("You lose! Scissors beats Paper")
             ++computerScore;
-        }if (ComputerChoice === "Rock"){
+        }else if (ComputerChoice === "Rock"){
             alert("You Win! Paper beats Rock")
             ++humanScore;
-        }
+        }else 
+            alert("its a tie!");
     }else 
-        alert("its a tie!");
+        alert("how on earth?");
 }
 
 //make a new function called playRound
