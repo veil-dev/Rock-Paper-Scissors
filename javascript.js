@@ -13,7 +13,7 @@ function convertChoice(num) {
 function getComputerChoice() {
     //make a random number between 0 and 1 and multiply by 3
     //round it down
-    randomNum = Math.floor(Math.random() * 3) + 1;
+    let randomNum = Math.floor(Math.random() * 3) + 1;
     //add 1 to it to get 1-3
     //if it selects 1-3 it returns the value for rock paper or scissors
     return convertChoice(randomNum);
@@ -21,8 +21,12 @@ function getComputerChoice() {
 
 //get the humans choice
 function getHumanChoice() {
-    humanChoice = parseInt(prompt("Rock = 1 \n Scissors = 2 \n Paper = 3 \n What is your choice?:"))
-    return convertChoice(humanChoice);
+    let humanChoice = parseInt(prompt("Rock = 1 \n Scissors = 2 \n Paper = 3 \n What is your choice?:"));
+    
+    while(humanChoice == NaN || humanChoice > 3 || humanChoice < 1)  {
+        alert("not in the range sorry")
+        humanChoice = parseInt(prompt("Rock = 1 \n Scissors = 2 \n Paper = 3 \n What is your choice?:"));
+    }
 }
 
 //Human score and computer score make new variable
